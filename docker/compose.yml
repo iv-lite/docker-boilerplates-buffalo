@@ -1,5 +1,3 @@
-name: buffallo-${PROJECT_NAME}
-
 services:
 
   app:
@@ -12,5 +10,5 @@ services:
         - BUFFALO_VERSION=${BUFFALO_VERSION}
         - USERNAME=${USERNAME}
     environment:
-      - PROJECT_NAME=${PROJECT_NAME}
+      - COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME}
       - USERNAME=${USERNAME}
