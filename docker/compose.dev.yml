@@ -1,0 +1,18 @@
+name: buffallo-${PROJECT_NAME}
+
+services:
+
+  app:
+    tty: true
+    extends:
+      service: app
+      file: compose.yml
+    build:
+      target: development
+      args:
+        - USERNAME=${USERNAME}
+    environment:
+      - PORT=${PORT}
+    volumes:
+      - ../:/app
+      - ${HOME}/.ssh:/home/${USERNAME}/.ssh

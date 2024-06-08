@@ -1,0 +1,12 @@
+services:
+
+  app:
+    build:
+      args:
+        - HTTP_PROXY=${DOCKER_HTTP_PROXY}
+        - HTTPS_PROXY=${DOCKER_HTTPS_PROXY}
+        - NO_PROXY=${DOCKER_NO_PROXY}
+    environment:
+      - HTTP_PROXY=${DOCKER_HTTP_PROXY}
+      - HTTPS_PROXY=${DOCKER_HTTPS_PROXY}
+      - NO_PROXY=${DOCKER_NO_PROXY}

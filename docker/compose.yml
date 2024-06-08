@@ -1,0 +1,16 @@
+name: buffallo-${PROJECT_NAME}
+
+services:
+
+  app:
+    build:
+      context: ..
+      dockerfile: docker/app.dockerfile
+      target: production
+      args:
+        - GO_VERSION=${GO_VERSION}
+        - BUFFALO_VERSION=${BUFFALO_VERSION}
+        - USERNAME=${USERNAME}
+    environment:
+      - PROJECT_NAME=${PROJECT_NAME}
+      - USERNAME=${USERNAME}
