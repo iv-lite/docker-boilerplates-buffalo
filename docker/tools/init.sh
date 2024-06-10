@@ -23,7 +23,9 @@ fi
 # inside docker where in <root>:/app
 if [ ! -d src ] && [ -z $DEBUG ]; then
     buffalo new $name --vcs none --skip-docker $flags;
-    mv $name src;
-    rm -rf .git;
-    git init;
+    if [ -d $name ]; then
+        mv $name src;
+        rm -rf .git;
+        git init;
+    fi
 fi
