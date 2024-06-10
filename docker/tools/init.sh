@@ -7,7 +7,7 @@ fi
 
 name=$1
 flags=""
-while [ ! -z $2 ]; do
+while [ ! -z $2 ] && [ $2 != "--rm"]; do
     flags+=" $2"
     shift
 done
