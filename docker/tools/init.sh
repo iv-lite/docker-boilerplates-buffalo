@@ -16,13 +16,13 @@ done
 
 if [ ! -f /.dockerenv ]; then
     docker compose build;
-    docker compose run app init.sh $name "${flags}" --rm ;
+    docker compose run app init.sh $name $flags --rm ;
     exit;
 fi
 
 # inside docker where in <root>:/app
 if [ ! -d src ] && [ -z $DEBUG ]; then
-    buffalo new $1 --vcs none --skip-docker "${flags}";
+    buffalo new $1 --vcs none --skip-docker $flags;
     mv $name src;
     rm -rf .git;
     git init;
