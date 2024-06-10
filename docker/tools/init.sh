@@ -8,7 +8,7 @@ fi
 name=$1
 flags=""
 while [ ! -z $2 ] && [ $2 != "--rm"]; do
-    flags+=" $2"
+    flags="$flags $2"
     shift
 done
 
