@@ -7,8 +7,10 @@ fi
 
 name=$1
 flags=""
-while [ [ ! -z $2 ] && [ $2 != "--rm"] ]; do
-    flags="$flags $2";
+while [ ! -z $2 ]; do
+    if [ $2 != "--rm" ]; then
+        flags="$flags $2";
+    fi
     shift;
 done
 
