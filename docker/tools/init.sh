@@ -21,7 +21,7 @@ if [ ! -f /.dockerenv ]; then
 fi
 
 # inside docker where in <root>:/app
-if [ ! -d src ] && [ -z DEBUG ]; then
+if [ ! -d src ] && [ -z $DEBUG ]; then
     buffalo new $1 --vcs none --skip-docker "${flags}";
     mv $1 src;
     rm -rf .git;
