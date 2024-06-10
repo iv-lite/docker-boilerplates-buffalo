@@ -7,7 +7,7 @@ fi
 
 name=$1
 flags=""
-while [ -n $2 ]; do
+while [ ! -z $2 ]; do
     flags+=" $2"
     shift
 done
@@ -20,7 +20,7 @@ fi
 
 # inside docker where in <root>:/app
 if [ ! -d src ] && [ -z DEBUG ]; then
-    buffalo new $1 --vcs none --skip-docker "${flags};
+    buffalo new $1 --vcs none --skip-docker "${flags}";
     mv $1 src;
     rm -rf .git;
     git init;
