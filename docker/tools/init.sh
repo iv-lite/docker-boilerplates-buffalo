@@ -8,8 +8,8 @@ fi
 name=$1
 flags=""
 while [ ! -z $2 ] && [ $2 != "--rm"]; do
-    flags="$flags $2"
-    shift
+    flags="$flags $2";
+    shift;
 done
 
 if [ ! -f /.dockerenv ]; then
