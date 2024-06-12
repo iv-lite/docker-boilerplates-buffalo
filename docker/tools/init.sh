@@ -21,7 +21,7 @@ if [ ! -f /.dockerenv ]; then
 fi
 
 # inside docker where in <root>:/app
-if [ ! -d src ] && [ -z $DEBUG ]; then
+if [ ! -d $name ] && [ -z $DEBUG ]; then
     buffalo new $name --vcs none --skip-docker $flags;
     if [ -d $name ]; then
         mv $name src;
