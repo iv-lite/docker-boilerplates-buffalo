@@ -21,10 +21,9 @@ if [ ! -f /.dockerenv ]; then
 fi
 
 # inside docker where in <root>:/app
-if [ ! -d $name ] && [ -z $DEBUG ]; then
-    buffalo new $name --vcs none --skip-docker $flags;
-    if [ -d $name ]; then
-        mv $name src;
+if [ ! -d src ] && [ -z $DEBUG ]; then
+    buffalo new src --module $name --vcs none --skip-docker $flags;
+    if [ -d src ]; then
         rm -rf .git;
         git init;
     fi
